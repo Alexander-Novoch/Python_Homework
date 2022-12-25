@@ -3,12 +3,43 @@
 # a) Добавьте игру против бота
 # b) Подумайте как наделить бота ""интеллектом""
 
-print('Игра в "конфеты"')
-#pool = int(input('Введите колличество конфет :'))
-pool = 121
+import random
+print('Игра в конфеты')
+pool = int(input('Введите колличество конфет :'))
 
+# Игра в конфеты на двух игроков
+# count = 1
+# while pool >= 0:
+#     if count == 1:
+#         move1 = int(input('Ход игрока №1 :'))
+#         if move1 < 1 or move1 > 28:
+#             print("Возьмите от 1 до 28 конфет!!!")
+#         elif move1 > pool:
+#             print(f"Возьмите от 1 до {pool} конфет!!!")
+#         else:
+#             pool -= move1
+#             print(f"Осталось {pool} конфет")
+#             count -= 1
+#     elif count == 0:
+#         move2 = int(input('Ход игрока №2 :'))
+#         if move2 < 1 or move2 > 28:
+#             print("Возьмите от 1 до 28 конфет!!!")
+#         elif move2 > pool:
+#             print(f"Возьмите от 1 до {pool} конфет!!!")
+#         else:
+#             pool -= move2
+#             print(f"Осталось {pool} конфет")
+#             count += 1
+# if count == 0:
+#     print(' конфеты достаются игроку №1 !')
+# else:
+#     print(' конфеты достаются игроку №2 !')
+
+
+
+# Игра в "конфеты с компьютером"
 count = 1
-while pool >= 0:
+while pool >= 1:
     if count == 1:
         move1 = int(input('Ход игрока №1 :'))
         if move1 < 1 or move1 > 28:
@@ -20,16 +51,17 @@ while pool >= 0:
             print(f"Осталось {pool} конфет")
             count -= 1
     elif count == 0:
-        move2 = int(input('Ход игрока №2 :'))
-        if move2 < 1 or move2 > 28:
-            print("Возьмите от 1 до 28 конфет!!!")
-        elif move2 > pool:
-            print(f"Возьмите от 1 до {pool} конфет!!!")
+        if 29 < pool <= 58:
+            move2 = pool-29
+        elif pool >= 59 or pool == 29:
+            move2 = random.randint(1, 28)
         else:
-            pool -= move2
-            print(f"Осталось {pool} конфет")
-            count += 1
+            move2 = pool
+        print(f'Ход компьютера: {move2}')
+        pool-=move2
+        print(f"Осталось {pool} конфет")
+        count+=1
 if count == 0:
-    print(' конфеты достаются игроку №1 !')
+    print('Конфеты достаются игроку №1 !')
 else:
-    print(' конфеты достаются игроку №2 !')
+    print(f'Конфеты достаются Компьютеру !))')
