@@ -1,7 +1,7 @@
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
-from config import TOKEN
+from config1 import TOKEN
 # from tic_tac_toe import *
 
 bot = Bot(token=TOKEN)
