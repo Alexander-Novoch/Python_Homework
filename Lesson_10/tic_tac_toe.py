@@ -1,6 +1,6 @@
 import telebot
 
-from config1 import TOKEN
+from config2 import TOKEN
 import random
 
 from telebot import types

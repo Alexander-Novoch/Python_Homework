@@ -130,3 +130,7 @@ dmypy.json
 token.txt
 config.py
 config1.py
+config2.py
+
+.idea/
+__pycache__/
